@@ -1,0 +1,6 @@
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\CreateEventSource\bin\Debug\CreateEventSource.exe.config
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\CreateEventSource\bin\Debug\CreateEventSource.exe
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\CreateEventSource\bin\Debug\CreateEventSource.pdb
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\CreateEventSource\obj\Debug\CreateEventSource.csprojResolveAssemblyReference.cache
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\CreateEventSource\obj\Debug\CreateEventSource.exe
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\CreateEventSource\obj\Debug\CreateEventSource.pdb

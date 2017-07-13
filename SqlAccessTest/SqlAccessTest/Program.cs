@@ -15,12 +15,21 @@ namespace SqlAccessTest
         static void Main()
         {
             ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new Service1()
-            };
 
-            ServiceBase.Run(ServicesToRun);
+            if (Environment.UserInteractive)
+            {
+                var service = new Service1(true);
+                service.CmdlineStart();
+            }
+            else
+            {
+                ServicesToRun = new ServiceBase[]
+                {
+                    new Service1(false)
+                };
+
+                ServiceBase.Run(ServicesToRun);
+            }
         }
     }
 }

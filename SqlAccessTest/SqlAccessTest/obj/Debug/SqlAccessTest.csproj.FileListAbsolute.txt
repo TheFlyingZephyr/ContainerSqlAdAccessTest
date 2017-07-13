@@ -1,0 +1,12 @@
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\SqlAccessTest.exe.config
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\SqlAccessTest.exe
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\SqlAccessTest.pdb
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\EntityFramework.dll
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\EntityFramework.xml
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\obj\Debug\SqlAccessTest.csprojResolveAssemblyReference.cache
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\obj\Debug\SqlAccessTest.Installer1.resources
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\obj\Debug\SqlAccessTest.csproj.GenerateResource.Cache
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\obj\Debug\SqlAccessTest.exe
+C:\Data\Github\ContainerSqlAdAccessTest\SqlAccessTest\SqlAccessTest\obj\Debug\SqlAccessTest.pdb

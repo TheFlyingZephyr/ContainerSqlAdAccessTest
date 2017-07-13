@@ -18,17 +18,46 @@ namespace SqlAccessTest
         const string _eLogName = "DbAccessTest";
         Thread workerThread = null;
         static EventLog _EventLog = null;
+        private bool _IsCmd = false;
 
-        public Service1()
+        public Service1(bool isCmdline)
         {
-            _EventLog = new EventLog("Application") {Source = _eLogName};
-            TestDbAccess();
+            _IsCmd = isCmdline;
+
+            if (_IsCmd)
+                Console.WriteLine("INFO: Try to access eventlog");
+
+            try
+            {
+                _EventLog = new EventLog("Application") {Source = _eLogName};
+
+                _EventLog.WriteEntry("Able to access eventlog", EventLogEntryType.Information, 1, 1);
+
+                if (_IsCmd)
+                    Console.WriteLine("INFO: Able to access eventlog");
+
+                //TestDbAccess();
+            }
+            catch (Exception e)
+            {
+                if (_IsCmd)
+                    Console.WriteLine("EXCEPTION: Unable to access eventlog : " + UnwindExceptionMessages(e));
+
+                throw;
+            }
 
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
+            if (_IsCmd)
+            {
+                Console.WriteLine("INFO: DbAccessTest Service Starting");
+                TestDbAccess();
+                return;
+            }
+
             _EventLog.WriteEntry("DbAccessTest Service Starting", EventLogEntryType.Information, 1, 1);
 
             workerThread = new Thread(Woker);
@@ -57,6 +86,10 @@ namespace SqlAccessTest
                     var res1 = from rows in dbC.Table1 select rows;
                     var res2 = res1.ToList();
                     //File.WriteAllText(_filePath, "SQL Access Test Passed");
+
+                    if (_IsCmd)
+                        Console.WriteLine("INFO: SQL Access(" + server + ") Test Passed");
+
                     _EventLog.WriteEntry("SQL Access (" + server + ") Test Passed", EventLogEntryType.Information, 1, 1);
                 }
 
@@ -64,6 +97,9 @@ namespace SqlAccessTest
             catch (Exception ex)
             {
                 //File.WriteAllText(_filePath, "SQL Access Test Failed : " + UnwindExceptionMessages(ex));
+                if (_IsCmd)
+                    Console.WriteLine("EXCEPTION: SQL Access(" + server + ") Test Failed : " + UnwindExceptionMessages(ex));
+
                 _EventLog.WriteEntry("SQL Access (" + server + ") Test Failed : " + UnwindExceptionMessages(ex), EventLogEntryType.Error, 2, 1);
                 return;
             }
@@ -82,5 +118,9 @@ namespace SqlAccessTest
             return s.ToString();
         }
 
+        public void CmdlineStart()
+        {
+            OnStart(new string[0]);
+        }
     }
 }
